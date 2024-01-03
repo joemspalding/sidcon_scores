@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "tsc index.ts ",
-    "start": "node index.js",
-    "go": "npm run build && npm run start",
+    "build": "tsc index.ts --outdir ./build ",
+    "start": "node ./build/index.js",
+    "go": "rm build & npm run build && npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
