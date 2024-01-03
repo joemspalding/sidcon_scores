@@ -3,31 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var create_games_1 = require("./create-games");
 var sidcon_types_1 = require("./sidcon-types");
 var GAMES = (0, create_games_1.createGameArray)();
+console.log("GAMES", GAMES.length);
 var factionAverages = [];
-// for (var faction in FactionEnum) {
-//     if (!+faction) continue;
-//     var factionId = +faction
-//     if (factionId > 18) break;
-//     var diff =  GAMES.reduce((totalDiff, game) => {
-//         var hasVorgFactions = game.players.map(p => p.faction >= 18).reduce((t,c) => {
-//             if (!c) return false;
-//             if (!t) return false;
-//             return true
-//         })
-//         if (hasVorgFactions) return;
-//         let avgDiff = game.players
-//             .filter(p => p.faction === factionId)
-//             .filter(p => p.isRegular)
-//             .reduce((t, _p) => t+_p.scoreDiff, 0 );
-//         console.log("avgDiff", avgDiff);
-//         return totalDiff + avgDiff
-//     }, 0)/GAMES.length
-//     // console.log(`Faction: ${FactionEnum[factionId]}, Diff: ${diff}\n`)
-//     factionAverages.push( {
-//         faction : FactionEnum[factionId],
-//         diff: diff
-//     })
-// }
 var gameCounter = 0;
 var scoreDiffs = [];
 var diffSum = 0;
@@ -43,8 +20,6 @@ for (var faction in sidcon_types_1.FactionEnum) {
     // only WizKids Factions allowed
     if (factionId >= sidcon_types_1.FactionEnum.KitVorg)
         break;
-    console.log("fac", factionId);
-    console.log("fac", sidcon_types_1.FactionEnum[factionId]);
     var diff = GAMES.reduce(function (totalDiff, game) {
         // remove homebrew factions
         var hasHomeBrewFactions = hasVorgFactions(game);
@@ -53,23 +28,42 @@ for (var faction in sidcon_types_1.FactionEnum) {
         // // filter by date
         // var startingAtDate: Date = new Date('9/30/2023');
         // if (game.date < startingAtDate) return totalDiff;
+        // // filter by player count
+        // const PLAYERCOUNT = 4
+        // if ((game.players.length < PLAYERCOUNT || game.players.length > PLAYERCOUNT)) return totalDiff;
         // does game have faction?
         var hasFaction = game.players.map(function (p) { return p.faction; }).includes(factionId);
         if (!hasFaction)
             return totalDiff;
         // get score diff by faction. throw out new player scores
         var avgDiff = game.players
-            .filter(function (p) { return p.faction === factionId; })
-            .filter(function (p) { return p.isRegular; })
+            .filter(function (p) {
+            var evaluation = p.faction === factionId;
+            // console.log("evaluation", evaluation);
+            return evaluation;
+        })
+            .filter(function (p) {
+            // console.log("p", p);
+            // console.log("p.isRegular", p.isRegular);
+            return p.isRegular;
+        })
             .map(function (p) {
             gameCounter++;
             scoreDiffs.push(p.scoreDiff);
+            // console.log("here", p);
             return p;
         })
             .reduce(function (t, _p) { return t + _p.scoreDiff; }, 0);
         return totalDiff + avgDiff;
     }, 0) / gameCounter;
-    var standardDeviation = scoreDiffs.map(function (sd) { return Math.pow((sd - diff), 2); }).reduce(function (t, c) { return t + c; }, 0) / gameCounter;
+    var standardDeviation = Math.pow((scoreDiffs
+        .map(function (sd) {
+        // console.log("\tdiff", sd)
+        var dev = Math.pow((sd - diff), 2);
+        // console.log("\tdev", dev)
+        return dev;
+    })
+        .reduce(function (t, c) { return t + c; }, 0) / gameCounter), .5);
     console.log("standardDeviation", standardDeviation);
     factionAverages.push({
         faction: sidcon_types_1.FactionEnum[factionId],

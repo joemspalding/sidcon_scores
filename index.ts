@@ -3,34 +3,8 @@ import { FactionEnum, Player, Game } from "./sidcon-types";
 
 const GAMES: Game[] = createGameArray();
 
+console.log("GAMES", GAMES.length);
 let factionAverages: {faction: string, plays: number, diff: number, sd:number}[] = []
-// for (var faction in FactionEnum) {
-//     if (!+faction) continue;
-//     var factionId = +faction
-//     if (factionId > 18) break;
-//     var diff =  GAMES.reduce((totalDiff, game) => {
-//         var hasVorgFactions = game.players.map(p => p.faction >= 18).reduce((t,c) => {
-//             if (!c) return false;
-//             if (!t) return false;
-//             return true
-//         })
-//         if (hasVorgFactions) return;
-
-//         let avgDiff = game.players
-//             .filter(p => p.faction === factionId)
-//             .filter(p => p.isRegular)
-//             .reduce((t, _p) => t+_p.scoreDiff, 0 );
-
-//         console.log("avgDiff", avgDiff);
-//         return totalDiff + avgDiff
-//     }, 0)/GAMES.length
-//     // console.log(`Faction: ${FactionEnum[factionId]}, Diff: ${diff}\n`)
-
-//     factionAverages.push( {
-//         faction : FactionEnum[factionId],
-//         diff: diff
-//     })
-// }
 
 let gameCounter = 0;
 let scoreDiffs: number[]  = [];
@@ -48,9 +22,8 @@ for (var faction in FactionEnum) {
     // only WizKids Factions allowed
     if (factionId >= FactionEnum.KitVorg) break;
 
-    console.log("fac",factionId);
-    console.log("fac", FactionEnum[factionId]);
     var diff = GAMES.reduce((totalDiff, game) => {
+
         // remove homebrew factions
         var hasHomeBrewFactions = hasVorgFactions(game);
         if (hasHomeBrewFactions) return totalDiff;
@@ -59,7 +32,10 @@ for (var faction in FactionEnum) {
         // var startingAtDate: Date = new Date('9/30/2023');
         // if (game.date < startingAtDate) return totalDiff;
 
-
+        // // filter by player count
+        // const PLAYERCOUNT = 4
+        // if ((game.players.length < PLAYERCOUNT || game.players.length > PLAYERCOUNT)) return totalDiff;
+        
         // does game have faction?
         var hasFaction = game.players.map(p => p.faction).includes(factionId)
         if (!hasFaction) return totalDiff
@@ -74,12 +50,15 @@ for (var faction in FactionEnum) {
                 return p;
             })
             .reduce((t, _p) => t + _p.scoreDiff, 0);
-
         return totalDiff + avgDiff
     }, 0)/gameCounter
 
-    let standardDeviation = scoreDiffs.map(sd => (sd - diff) ** 2).reduce ((t, c) => t+c, 0)/gameCounter;
-    console.log("standardDeviation", standardDeviation);
+    let standardDeviation = (scoreDiffs
+    .map(sd => {
+        let dev = (sd - diff) ** 2
+        return dev;
+    })
+    .reduce ((t, c) => t+c, 0)/gameCounter) **.5;
     factionAverages.push( {
         faction : FactionEnum[factionId],
         plays: gameCounter,
