@@ -1,15 +1,17 @@
 import { Player } from "./sidcon-types"
 
+/* Every player that has played on the discord  */
+
+/** isRegular questions?
+ * Toan()
+ * phoenix
+ * spawn.peek
+ * panfex
+ */
 export const noname = <Player> {
     name: '',
     isRegular: false
 }
-// const dnf = <Player> {
-//     ...noname,
-//     faction: FactionEnum.DNF,
-//     score: 0,
-// }
-
 export const dascoolest = <Player> {
     name: 'DasCoolest',
     isRegular: false
@@ -18,8 +20,6 @@ export const erratic = <Player> {
     name: 'The Erratic Factotum',
     isRegular: false
 }
-
-
 export const elz = <Player> {
     name: 'Elzarius',
     isRegular: true,

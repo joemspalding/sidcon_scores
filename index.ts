@@ -3,7 +3,6 @@ import { FactionEnum, Player, Game } from "./sidcon-types";
 
 const GAMES: Game[] = createGameArray();
 
-console.log("GAMES", GAMES.length);
 let factionAverages: {faction: string, plays: number, diff: number, sd:number}[] = []
 
 let gameCounter = 0;
@@ -24,27 +23,27 @@ for (var faction in FactionEnum) {
 
     var diff = GAMES.reduce((totalDiff, game) => {
 
-        // remove homebrew factions
+        // do not count games with homebrew factions
         var hasHomeBrewFactions = hasVorgFactions(game);
         if (hasHomeBrewFactions) return totalDiff;
 
-        // // filter by date
+        // // filter games by date
         // var startingAtDate: Date = new Date('9/30/2023');
         // if (game.date < startingAtDate) return totalDiff;
 
-        // // filter by player count
+        // // filter games by player count
         // const PLAYERCOUNT = 4
         // if ((game.players.length < PLAYERCOUNT || game.players.length > PLAYERCOUNT)) return totalDiff;
         
-        // does game have faction?
+        // does the game have the faction
         var hasFaction = game.players.map(p => p.faction).includes(factionId)
         if (!hasFaction) return totalDiff
 
-        // get score diff by faction. throw out new player scores
+        // get score ...
         let avgDiff = game.players
-            .filter(p => p.faction === factionId)
-            .filter(p => p.isRegular)
-            .map(p => {
+            .filter(p => p.faction === factionId)   // ...by diff...
+            .filter(p => p.isRegular)               // ...remove new player scores...
+            .map(p => {                             // statistical admin stuff
                 gameCounter++;
                 scoreDiffs.push(p.scoreDiff);
                 return p;
@@ -53,12 +52,14 @@ for (var faction in FactionEnum) {
         return totalDiff + avgDiff
     }, 0)/gameCounter
 
+    // calculate standard deviation
     let standardDeviation = (scoreDiffs
-    .map(sd => {
-        let dev = (sd - diff) ** 2
-        return dev;
-    })
-    .reduce ((t, c) => t+c, 0)/gameCounter) **.5;
+        .map(sd => {
+            let dev = (sd - diff) ** 2
+            return dev;
+        })
+        .reduce((t, c) => t + c, 0) / gameCounter) ** .5;
+
     factionAverages.push( {
         faction : FactionEnum[factionId],
         plays: gameCounter,
