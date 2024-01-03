@@ -1,7 +1,7 @@
 import { Game, Player, FactionEnum } from "./sidcon-types";
 import * as GAMES from './GAMES'
 
-
+import * as players from './players'
 
 
 export function createGameArray(): Game[] {

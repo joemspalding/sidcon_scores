@@ -7,6 +7,7 @@ import { Player } from "./sidcon-types"
  * phoenix
  * spawn.peek
  * panfex
+ * ytkornbluth
  */
 export const noname = <Player> {
     name: '',
@@ -112,10 +113,6 @@ export const lastargument = <Player> {
     name: 'lastArgument',
     isRegular: false,
 }
-export const abdla = <Player> {
-    name: 'abdla',
-    isRegular: false,
-}
 export const geo = <Player> {
     name: 'mrgeometry1234',
     isRegular: false,
@@ -217,5 +214,33 @@ export const abdbla = <Player> {
 }
 export const panfex = <Player> {
     name: 'Panfex',
+    isRegular: false
+}
+export const diogenese = <Player> {
+    name: 'Diogenese',
+    isRegular: false
+}
+export const pixel = <Player> {
+    name: 'Pixel',
+    isRegular: false
+}
+export const assassin = <Player> {
+    name: 'Assassin3838',
+    isRegular: false
+}
+export const vyqrel = <Player> {
+    name: 'Vyqrel',
+    isRegular: false
+}
+export const trapeye = <Player> {
+    name: 'Trapeye',
+    isRegular: false
+}
+export const wraithx = <Player> {
+    name: 'WraithX',
+    isRegular: false
+}
+export const tedsternator = <Player> {
+    name: 'tedsternator',
     isRegular: false
 }

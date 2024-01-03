@@ -14,8 +14,41 @@ import * as players from './players'
 /* Omitting DNF on 06/01/2023 */
 /* Omitting DNF on 05/08/2023 */
 /* Omitting DNF on 04/09/2023 */
+/* Omitting DNF on 02/24/2023 */
+/* Omitting DNF on 02/12/2023 */
+/* Omitting non-servergame on 01/06/2023 */
 
 export const GAMES: Game[] = [
+    <Game> {
+        date: new Date('01/03/2024'),
+        players:[
+            {
+                ...players.toron,
+                faction: FactionEnum.KitAlt,
+                score: 93 + (3/12)
+            },
+            {
+                ...players.hingle,
+                faction: FactionEnum.EniEtAlt,
+                score: 72 + (3/12)
+            },
+            {
+                ...players.tedsternator,
+                faction: FactionEnum.ZethCore,
+                score: 71 + (6/12)
+            },
+            {
+                ...players.zisos,
+                faction: FactionEnum.CaylionCore,
+                score: 68 + (1/12)
+            },
+            {
+                ...players.grim,
+                faction: FactionEnum.YengiiCore,
+                score: 61 + (7/12)
+            },
+        ]
+    },
     <Game> {
         date: new Date('01/02/2024'),
         players:[
@@ -1711,7 +1744,7 @@ export const GAMES: Game[] = [
                 score: 74 + (9/12)
             },
             {
-                ...players.abdla,
+                ...players.abdbla,
                 faction: FactionEnum.CaylionAlt,
                 score: 65 + (9/12)
             },
@@ -5574,7 +5607,6 @@ export const GAMES: Game[] = [
             },
         ]
     },
-    
     <Game> {
         date: new Date('03/30/2023'),
         players:[
@@ -6006,6 +6038,692 @@ export const GAMES: Game[] = [
                 ...players.abdbla,
                 faction: FactionEnum.UnityAlt,
                 score: 45 + (7/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/27/2023'),
+        players:[
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.FaderanCore,
+                score: 120 + (0/12)
+            },
+            {
+                ...players.markus,
+                faction: FactionEnum.ImDrilAlt,
+                score: 100 + (3/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.KitAlt,
+                score: 99 + (10/12)
+            },
+            {
+                ...players.prosperity,
+                faction: FactionEnum.EniEtCore,
+                score: 96 + (3/12)
+            },
+            {
+                ...players.jeff,
+                faction: FactionEnum.KjasCore,
+                score: 96 + (2/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.CaylionCore,
+                score: 80 + (0/12)
+            },
+            {
+                ...players.spawn,
+                faction: FactionEnum.ZethAlt,
+                score: 64 + (11/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/25/2023'),
+        players:[
+            {
+                ...players.wumbo,
+                faction: FactionEnum.KitCore,
+                score: 73 + (2/12)
+            },
+            {
+                ...players.rahm,
+                faction: FactionEnum.ZethAlt,
+                score: 65 + (6/12)
+            },
+            {
+                ...players.hingle,
+                faction: FactionEnum.EniEtCore,
+                score: 64 + (2/12)
+            },
+            {
+                ...players.abdbla,
+                faction: FactionEnum.UnityAlt,
+                score: 60 + (7/12)
+            },
+            {
+                ...players.toan,
+                faction: FactionEnum.CaylionCore,
+                score: 51 + (11/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/24/2023'),
+        players:[
+            {
+                ...players.jeff,
+                faction: FactionEnum.KjasCore,
+                score: 92 + (10/12)
+            },
+            {
+                ...players.therlun,
+                faction: FactionEnum.CaylionAlt,
+                score: 74 + (4/12)
+            },
+            {
+                ...players.boy,
+                faction: FactionEnum.EniEtCore,
+                score: 73 + (5/12)
+            },
+            {
+                ...players.toron,
+                faction: FactionEnum.UnityAlt,
+                score: 69 + (6/12)
+            },
+            {
+                ...players.hingle,
+                faction: FactionEnum.KitCore,
+                score: 67 + (11/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/23/2023'),
+        players:[
+            {
+                ...players.elz,
+                faction: FactionEnum.FaderanAlt,
+                score: 126 + (4/12)
+            },
+            {
+                ...players.jeff,
+                faction: FactionEnum.KjasAlt,
+                score: 104 + (4/12)
+            },
+            {
+                ...players.markus,
+                faction: FactionEnum.KitAlt,
+                score: 103 + (0/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.ZethAlt,
+                score: 96 + (0/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.EniEtAlt,
+                score: 95 + (3/12)
+            },
+            {
+                ...players.therlun,
+                faction: FactionEnum.CaylionAlt,
+                score: 86 + (10/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/22/2023'),
+        players:[
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.KitCore,
+                score: 91 + (9/12)
+            },
+            {
+                ...players.prosperity,
+                faction: FactionEnum.FaderanCore,
+                score: 85 + (5/12)
+            },
+            {
+                ...players.elz,
+                faction: FactionEnum.UnityCore,
+                score: 80 + (7/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.YengiiCore,
+                score: 80 + (7/12)
+            },
+            {
+                ...players.markus,
+                faction: FactionEnum.KjasCore,
+                score: 74 + (5/12)
+            },
+            {
+                ...players.rahm,
+                faction: FactionEnum.ZethAlt,
+                score: 70 + (11/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/21/2023'),
+        players:[
+            {
+                ...players.jeff,
+                faction: FactionEnum.EniEtAlt,
+                score: 109 + (6/12)
+            },
+            {
+                ...players.toron,
+                faction: FactionEnum.FaderanCore,
+                score: 80 + (5/12)
+            },
+            {
+                ...players.hingle,
+                faction: FactionEnum.CaylionCore,
+                score: 76 + (6/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.ZethAlt,
+                score: 73 + (0/12)
+            },
+            {
+                ...players.abdbla,
+                faction: FactionEnum.UnityAlt,
+                score: 63 + (6/12)
+            },
+            {
+                ...players.boy,
+                faction: FactionEnum.KjasCore,
+                score: 58 + (6/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/20/2023'),
+        players:[
+            {
+                ...players.elz,
+                faction: FactionEnum.KjasAlt,
+                score: 103 + (11/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.YengiiCore,
+                score: 94 + (9/12)
+            },
+            {
+                ...players.jeff,
+                faction: FactionEnum.FaderanCore,
+                score: 93 + (0/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.CaylionCore,
+                score: 88 + (6/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.EniEtAlt,
+                score: 83 + (8/12)
+            },
+            {
+                ...players.diogenese,
+                faction: FactionEnum.KitCore,
+                score: 82 + (0/12)
+            },
+            {
+                ...players.markus,
+                faction: FactionEnum.ImDrilCore,
+                score: 73 + (0/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/18/2023'),
+        players:[
+            {
+                ...players.elz,
+                faction: FactionEnum.EniEtCore,
+                score: 131 + (8/12)
+            },
+            {
+                ...players.jeff,
+                faction: FactionEnum.ZethAlt,
+                score: 109 + (10/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.KitCore,
+                score: 98 + (3/12)
+            },
+            {
+                ...players.prosperity,
+                faction: FactionEnum.ImDrilAlt,
+                score: 97 + (8/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.CaylionAlt,
+                score: 93 + (7/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.YengiiCore,
+                score: 72 + (10/12)
+            },
+            {
+                ...players.pixel,
+                faction: FactionEnum.FaderanCore,
+                score: 72 + (10/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/17/2023'),
+        players:[
+            {
+                ...players.jeff,
+                faction: FactionEnum.KitAlt,
+                score: 78 + (8/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.EniEtAlt,
+                score: 72 + (9/12)
+            },
+            {
+                ...players.elz,
+                faction: FactionEnum.ImDrilCore,
+                score: 70 + (0/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.CaylionCore,
+                score: 67 + (0/12)
+            },
+            {
+                ...players.diogenese,
+                faction: FactionEnum.KjasCore,
+                score: 65 + (11/12)
+            },
+
+        ]
+    },
+    <Game> {
+        date: new Date('02/13/2023'),
+        players:[
+            {
+                ...players.iggy,
+                faction: FactionEnum.KitCore,
+                score: 82 + (7/12)
+            },
+            {
+                ...players.jeff,
+                faction: FactionEnum.YengiiAlt,
+                score: 80 + (0/12)
+            },
+            {
+                ...players.prosperity,
+                faction: FactionEnum.EniEtAlt,
+                score: 79 + (9/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.FaderanCore,
+                score: 79 + (2/12)
+            },
+            {
+                ...players.elz,
+                faction: FactionEnum.CaylionCore,
+                score: 78 + (3/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/11/2023'),
+        players:[
+            {
+                ...players.elz,
+                faction: FactionEnum.ImDrilCore,
+                score: 111 + (5/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.EniEtAlt,
+                score: 82 + (3/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.KitAlt,
+                score: 74 + (3/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.KjasCore,
+                score: 73 + (8/12)
+            },
+            {
+                ...players.assassin,
+                faction: FactionEnum.CaylionCore,
+                score: 67 + (11/12)
+            },
+            {
+                ...players.abdbla,
+                faction: FactionEnum.UnityAlt,
+                score: 61 + (5/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/11/2023'),
+        players:[
+            {
+                ...players.wumbo,
+                faction: FactionEnum.EniEtAlt,
+                score: 65 + (7/12)
+            },
+            {
+                ...players.elz,
+                faction: FactionEnum.ImDrilCore,
+                score: 63 + (10/12)
+            },
+            {
+                ...players.vyqrel,
+                faction: FactionEnum.KitCore,
+                score: 49 + (10/12)
+            },
+            {
+                ...players.toan,
+                faction: FactionEnum.CaylionCore,
+                score: 38 + (0/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/10/2023'),
+        players:[
+            {
+                ...players.jeff,
+                faction: FactionEnum.ImDrilAlt,
+                score: 108 + (7/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.YengiiCore,
+                score: 100 + (0/12)
+            },
+            {
+                ...players.elz,
+                faction: FactionEnum.KjasCore,
+                score: 95 + (8/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.KitCore,
+                score: 86 + (1/12)
+            },
+            {
+                ...players.abdbla,
+                faction: FactionEnum.CaylionAlt,
+                score: 81 + (7/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.FaderanCore,
+                score: 60 + (3/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/06/2023'),
+        players:[
+            {
+                ...players.elz,
+                faction: FactionEnum.ImDrilAlt,
+                score: 100 + (0/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.KitCore,
+                score: 94 + (11/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.CaylionCore,
+                score: 87 + (11/12)
+            },
+            {
+                ...players.prosperity,
+                faction: FactionEnum.KjasAlt,
+                score: 81 + (11/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.ZethAlt,
+                score: 79 + (8/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/05/2023'),
+        players:[
+            {
+                ...players.ytkorn,
+                faction: FactionEnum.FaderanAlt,
+                score: 93 + (5/12)
+            },
+            {
+                ...players.hingle,
+                faction: FactionEnum.EniEtCore,
+                score: 80 + (2/12)
+            },
+            {
+                ...players.toron,
+                faction: FactionEnum.KjasAlt,
+                score: 77 + (4/12)
+            },
+            {
+                ...players.jeff,
+                faction: FactionEnum.UnityAlt,
+                score: 74 + (2/12)
+            },
+            {
+                ...players.therlun,
+                faction: FactionEnum.YengiiAlt,
+                score: 72 + (7/12)
+            },
+            {
+                ...players.therlun,
+                faction: FactionEnum.YengiiAlt,
+                score: 72 + (7/12)
+            },
+            {
+                ...players.boy,
+                faction: FactionEnum.ZethCore,
+                score: 59 + (0/12)
+            },
+            {
+                ...players.rahm,
+                faction: FactionEnum.ImDrilCore,
+                score: 52 + (11/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('02/04/2023'),
+        players:[
+            {
+                ...players.elz,
+                faction: FactionEnum.FaderanAlt,
+                score: 91 + (11/12)
+            },
+            {
+                ...players.markus,
+                faction: FactionEnum.KjasCore,
+                score: 82 + (6/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.KitAlt,
+                score: 79 + (4/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.CaylionCore,
+                score: 77 + (4/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.EniEtAlt,
+                score: 76 + (3/12)
+            },
+            {
+                ...players.hingle,
+                faction: FactionEnum.ZethAlt,
+                score: 74 + (4/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('01/31/2023'),
+        players:[
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.EniEtAlt,
+                score: 91 + (11/12)
+            },
+            {
+                ...players.hingle,
+                faction: FactionEnum.KitAlt,
+                score: 84 + (11/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.YengiiCore,
+                score: 84 + (9/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.UnityAlt,
+                score: 68 + (2/12)
+            },
+            {
+                ...players.pixel,
+                faction: FactionEnum.FaderanCore,
+                score: 60 + (0/12)
+            },
+            {
+                ...players.spawn,
+                faction: FactionEnum.KjasCore,
+                score: 48 + (3/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('01/27/2023'),
+        players:[
+            {
+                ...players.elz,
+                faction: FactionEnum.CaylionCore,
+                score: 85 + (0/12)
+            },
+            {
+                ...players.prosperity,
+                faction: FactionEnum.EniEtAlt,
+                score: 81 + (8/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.ImDrilCore,
+                score: 70 + (0/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.KjasCore,
+                score: 59 + (11/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.FaderanAlt,
+                score: 58 + (10/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('01/22/2023'),
+        players:[
+            {
+                ...players.elz,
+                faction: FactionEnum.ZethAlt,
+                score: 81 + (8/12)
+            },
+            {
+                ...players.hingle,
+                faction: FactionEnum.ImDrilCore,
+                score: 67 + (5/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.UnityAlt,
+                score: 64 + (11/12)
+            },
+            {
+                ...players.therlun,
+                faction: FactionEnum.KitAlt,
+                score: 60 + (10/12)
+            },
+            {
+                ...players.trapeye,
+                faction: FactionEnum.CaylionCore,
+                score: 45 + (5/12)
+            },
+        ]
+    },
+    <Game> {
+        date: new Date('01/14/2023'),
+        players:[
+            {
+                ...players.elz,
+                faction: FactionEnum.KitAlt,
+                score: 115 + (7/12)
+            },
+            {
+                ...players.axxxvi,
+                faction: FactionEnum.YengiiCore,
+                score: 95 + (7/12)
+            },
+            {
+                ...players.markus,
+                faction: FactionEnum.EniEtCore,
+                score: 95 + (2/12)
+            },
+            {
+                ...players.prosperity,
+                faction: FactionEnum.UnityAlt,
+                score: 90 + (7/12)
+            },
+            {
+                ...players.wumbo,
+                faction: FactionEnum.ZethAlt,
+                score: 89 + (6/12)
+            },
+            {
+                ...players.iggy,
+                faction: FactionEnum.KjasAlt,
+                score: 70 + (5/12)
+            },
+            {
+                ...players.wraithx,
+                faction: FactionEnum.CaylionCore,
+                score: 61 + (7/12)
             },
         ]
     },

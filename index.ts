@@ -3,6 +3,7 @@ import { FactionEnum, Player, Game } from "./sidcon-types";
 
 const GAMES: Game[] = createGameArray();
 
+let isFaction = (f) => f === FactionEnum.KitCore || f === FactionEnum.KjasCore || f === FactionEnum.UnityAlt
 let factionAverages: {faction: string, plays: number, diff: number, sd:number}[] = []
 
 let gameCounter = 0;
@@ -44,6 +45,11 @@ for (var faction in FactionEnum) {
             .filter(p => p.faction === factionId)   // ...by diff...
             .filter(p => p.isRegular)               // ...remove new player scores...
             .map(p => {                             // statistical admin stuff
+                if (isFaction(p.faction)) {
+                    if (Number.isNaN(p.scoreDiff)) {
+                        console.log(`${game.date}: ${p.name} - ${FactionEnum[p.faction]} - ${p.scoreDiff}`, );
+                    }
+                }
                 gameCounter++;
                 scoreDiffs.push(p.scoreDiff);
                 return p;
